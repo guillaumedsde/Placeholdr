@@ -12,8 +12,8 @@
 
 {% block body_block %}
     <div class="container">
-		<div class="container" id="registration-container">
-			<form id="user_form" method="post" action="{% url 'submit_trip' %}"
+		<div class="row spaced">
+			<form id="trip_info_form" method="post" action="{% url 'submit_trip' %}"
 				enctype="multipart/form-data">
 				<input type="hidden" value="" id="slug_holder" name="slug_holder">
 				{% csrf_token %}
@@ -26,53 +26,31 @@
 				<h3 class="text-danger">{{ warning }}</h3>
 			{% endif %}
 		</div>
+		<div class="spacer"></div>
+		<div class="spacer"></div>
+		<div class="spacer"></div>
         <div class="row">
-            
-                <div class="row search">
-                        <div class="col">
-                            <input id="searchy" class="form-control mr-sm-2" name="q" type="search" placeholder="Search" onkeyup="search_for_places()" aria-label="Search">
-                        </div>
-                        <div class="col-xs">
-                            <button class="btn btn-outline-success my-2 my-sm-0" onclick="search_for_places()">Search</button>
-                        </div>
-                </div>
-            
-        </div>
-
-		<div class="row">
-			<p>Your search for <b>{{ query_string }}</b> returned the following results: </p>
-		</div>
-		<div class="row" id="result_section">
-			<div class="col" id="result_section">
-				{% include "placeholdr/psearch_section.html" %}
-			</div>
-		</div>
-		<div class="row" id="added_section">
-		</div>
-        {% if query_string %}
-            {% if not found %}
-                <p>No results found for <b>{{ query_string }}</b>.</p>
-                {% if user.is_authenticated %}
-                    <br>
-                    <br>
-                    <div class="row">
-                        <div class="col-3">
-                            <p> Feel free to add {{ query_string }}: </p>
-                        </div>
-                        <div class="col-2">
-                            <button type="button" class="btn btn-outline-secondary" href="">Add a Trip</button>
-                        </div>
-                        <div class="col-2">
-                            <button type="button" class="btn btn-outline-secondary" href="">Add a Place</button>
-                        </div>
+            <div class="side-spaced col">
+                <h4>Search for places</h4>
+                <div class="row spaced search">
+                    <div class="col">
+                        <input id="searchy" class="form-control mr-sm-2" name="q" type="search" placeholder="Search" onkeyup="search_for_places()" aria-label="Search">
                     </div>
-                {% else %}
-                    <p> <a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a> to create {{ query_string }}</p>
-                {% endif %}
-            {% endif %}
-        {% else %}
-            <p>Try to search in the bar above.</p>
-        {% endif %}
+                    <div class="col-xs">
+                        <button class="btn btn-outline-success my-2 my-sm-0" onclick="search_for_places()">Search</button>
+                    </div>
+                </div>
+                <div class="row" id="result_section">
+                    <div class="col" id="result_section">
+                        {% include "placeholdr/psearch_section.html" %}
+                    </div>
+                </div>
+            </div>
+            <div class="side-spaced col">
+                <h4>Places in trip</h4>
+		        <div class="row" id="added_section"></div>
+            </div>
+		</div>
     </div>
 {% endblock %}
 
