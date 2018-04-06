@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<div class="row">
+    {% if object.desc %}
+        <p>{{ object.desc|striptags }}</p>
+    {% else %}
+        There is no description
+    {% endif %}
+</div>

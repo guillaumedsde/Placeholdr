@@ -14,7 +14,26 @@
 	<div class="container">
 		{% if trip %}
 			<div class="row spaced">
-				{% include "placeholdr/basic_trip_place_info.html" with object=trip %}
+			    {% with object=trip %}
+				    <div class="col">
+				        <div class="row">
+                            <h1>{{ object.name }}</h1>
+                        </div>
+
+                        {% include "placeholdr/object/submitter_section.html" %}
+
+                        {% include "placeholdr/object/object_description.html" %}
+
+                        {% include "placeholdr/object/tag_section.html" %}
+
+                        {% include "placeholdr/object/star_summary_card.html" %}
+
+                    </div>
+
+                    <div class="col-sm">
+                        {% include "placeholdr/object/map.html" %}
+                    </div>
+                {% endwith %}
 			</div>
 			<div class="row spaced">
                 <div id="pictureCarousel" class="carousel slide img-thumbnail" data-ride="carousel">
