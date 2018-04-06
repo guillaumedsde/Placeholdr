@@ -1,27 +1,12 @@
-![alt text](https://raw.githubusercontent.com/WADPlaceholdr/Placeholdr/master/static/images/logonobg.png)
+![alt text](https://raw.githubusercontent.com/guillaumedsde/Placeholdr/master/static/images/logonobg.png)
 
 
 ## Description
 placeholdr is a Django web application with the objective of allowing people to browse through places of interest and create trips based on those places, with a user community that provides ratings, comments, pictures.
+This is a fork of [the original Placeholdr webapp](https://github.com/WADPlaceholdr/Placeholdr)
 
 ## Demo
-a live demo is available at https://placeholdr.pythonanywhere.com/
-
-## External sources
-* django
-* Google Maps API
-* Bootstrap
-* django-bootstrap4
-* animate.css
-* wow.js
-* Search code snippet by julienphalip.com
-* django-csp
-* django-mathfilters
-* django-referrer-policy
-* django-geoposition
-* Pillow
-* pytz
-* selenium
+a live demo is not yet available, clone repo to demo
 
 ## Requirements
 (see [requirements.txt](https://github.com/WADPlaceholdr/Placeholdr/blob/master/requirements.txt))
@@ -40,7 +25,7 @@ a live demo is available at https://placeholdr.pythonanywhere.com/
 ## Installation
 clone this repository
 ```
-git clone https://github.com/WADPlaceholdr/Placeholdr.git
+git clone https://github.com/guillaumedsde/Placeholdr.git
 ```
 
 install requirements
@@ -67,20 +52,6 @@ python manage.py migrate
 python population_script.py
 ```
 
-SUMMARY
-
-```
-git clone https://github.com/WADPlaceholdr/Placeholdr.git
-cd Placeholdr
-pip install –r requirements.txt --yes
-$ mv placeholdr/deployment_variables.py.conf placeholdr/deployment_variables.py
-python manage.py migrate
-python population_script.py
-```
-
 
 ## Support
-for support please submit an issue on [GitHub](https://github.com/WADPlaceholdr/Placeholdr/issues)
-
-## Contact
-wadplaceholdr@gmail.com
+for support please submit an issue on [GitHub](https://github.com/guillaumedsde/Placeholdr/issues)
