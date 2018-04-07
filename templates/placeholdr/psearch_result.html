@@ -2,29 +2,15 @@
 {% load mathfilters %}
 {% load placeholdr_filters %}
 
-
-{#<div class="card" id="{{ place.slug }}">#}
-{#    <div class="card-body">#}
-{#        <div class="row">#}
-{#            <div class="col">#}
-{#                <a href="/placeholdr/place/{{ place.slug }}">{{ place.name }}</a><br/>#}
-{#                <p>{{ place.desc|striptags }}</p>#}
-{##}
-{#            </div>#}
-{#            <div class="col-xs align-self-center">#}
-{#                <button type="button" class="btn btn-success align-middle" onclick="add_place('{{ place.slug }}')">Add to Trip</button>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-
-<div class="card result w-100" id="{{ place.slug }}">
-    <h5 class="card-header"><a href="/placeholdr/place/{{ place.slug }}">{{ place.name }}</a></h5>
-    <div class="card-body">
-{#            <a href="/placeholdr/place/{{ place.slug }}">{{ place.name }}</a><br/>#}
-            <p>{{ place.desc|striptags }}</p>
+<div class="card result" id="{{ place.slug }}">
+    <div class="card-header">
+        <h4><a href="/placeholdr/place/{{ place.slug }}">{{ place.name }}</a>
+            <small class="float-sm-right">
+                <button type="button" class="btn btn-success" onclick="add_place('{{ place.slug }}')">+</button>
+            </small>
+        </h4>
     </div>
-    <div class="card-footer">
-        <button type="button" class="btn btn-success align-middle" onclick="add_place('{{ place.slug }}')">Add to Trip</button>
+    <div class="card-body">
+        <p>{{ place.desc|striptags|truncatechars:200 }}</p>
     </div>
 </div>

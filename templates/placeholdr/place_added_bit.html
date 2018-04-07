@@ -2,15 +2,15 @@
 {% load mathfilters %}
 {% load placeholdr_filters %}
 
-<div class="card reviewCard"  id="{{place.slug}}_added">
-	<div class="row">
-		<div class="col">
-			<a href="/placeholdr/place/{{ place.slug }}">{{ place.name }}</a><br/>
-			<p>{{ place.desc|striptags }}</p>
-
-		</div>
-		<div class="col-xs align-self-center">
-			<button type="button" class="btn btn-danger align-middle" onclick="remove_place('{{place.slug}}')">Remove From Trip</button>
-		</div>
-	</div>
+<div class="card result" id="{{ place.slug }}_added">
+    <div class="card-header">
+        <h4><a href="/placeholdr/place/{{ place.slug }}">{{ place.name }}</a>
+            <small class="float-sm-right">
+                <button type="button" class="btn btn-danger" onclick="remove_place('{{place.slug}}')">-</button>
+            </small>
+        </h4>
+    </div>
+    <div class="card-body">
+        <p>{{ place.desc|striptags|truncatechars:200 }}</p>
+    </div>
 </div>
