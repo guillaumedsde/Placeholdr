@@ -17,7 +17,11 @@
 			    {% with object=place %}
 				    <div class="col">
 				        <div class="row">
-                            <h1>{{ object.name }}</h1>
+                            <h1>{{ object.name }}
+                                <div class="float-sm-right">
+                                    {% include "placeholdr/review_button.html" %}
+                                </div>
+                            </h1>
                         </div>
 
                         {% include "placeholdr/object/submitter_section.html" %}
