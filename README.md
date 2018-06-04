@@ -1,3 +1,5 @@
+**Due to [Microsoft's acquisition of GitHub](https://arstechnica.com/gadgets/2018/06/microsoft-snaps-up-github-for-7-5-billion/) I have moved [all my projects to GitLab](https://gitlab.com/guillaumedsde) and have stopped using GitHub, all further development will take place on GitLab**
+
 ![alt text](https://raw.githubusercontent.com/guillaumedsde/Placeholdr/master/static/images/logonobg.png)
 
 
